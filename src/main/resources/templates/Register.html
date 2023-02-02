@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registrazione</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/responsive.css}" rel="stylesheet">
+</head>
+
+<body >
+<img th:src="@{/images/sfondo.jpg}" class="bg-img">
+
+<main class="pt-5 pb-5">
+
+    <div class="card w-50 mx-auto mt-5 text-center tertiary-color" style="background: #0b0b0b47 !important;">
+        <div class="card-body p-5">
+
+            <div class="d-flex justify-content-center mt-5 mb-5">
+                <div class="brand_logo_container">
+                    <img src="images/logo.png" class="brand_logo"
+                         alt="Logo">
+                </div>
+            </div>
+
+            <form th:action="@{/register}" method="post">
+                <div class="form-outline mb-4">
+                    <label for="input-username" class="form-label">Username</label>
+                    <div class="input-group mb-3">
+
+                        <input type="text" th:field="${credentials.username}"
+                               class="form-control"
+                               th:classappend="${#fields.hasErrors('credentials.username') ? 'is-invalid' : ''}"
+                               id="input-username" />
+                        <div class="invalid-feedback">
+							<span th:if="${#fields.hasErrors('credentials.username')}"
+                                  th:errors="${credentials.username}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="input-password" class="form-label">Password</label>
+                    <div class="input-group mb-3">
+                        <input type="password" th:field="${credentials.password}"
+                               class="form-control"
+                               th:classappend="${#fields.hasErrors('credentials.password') ? 'is-invalid' : ''}"
+                               id="input-password" />
+                        <div class="invalid-feedback">
+							<span th:if="${#fields.hasErrors('credentials.password')}"
+                                  th:errors="${credentials.password}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="input-nome" class="form-label">Nome</label>
+                    <div class="input-group mb-3">
+                        <input type="text" th:field="${user.nome}" class="form-control"
+                               th:classappend="${#fields.hasErrors('user.nome') ? 'is-invalid' : ''}"
+                               id="input-nome" />
+                        <div class="invalid-feedback">
+							<span th:if="${#fields.hasErrors('user.nome')}"
+                                  th:errors="${user.nome}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-outline mb-4">
+                    <label for="input-cognome" class="form-label">Cognome</label>
+                    <div class="input-group mb-3">
+                        <input type="text" th:field="${user.cognome}" class="form-control"
+                               th:classappend="${#fields.hasErrors('user.cognome') ? 'is-invalid' : ''}"
+                               id="input-cognome" />
+                        <div class="invalid-feedback">
+							<span th:if="${#fields.hasErrors('user.cognome')}"
+                                  th:errors="${user.cognome}"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-grid text-center pt-1 mb-5 pb-1">
+                    <button type="submit"
+                            class="btn btn-primary mb-3" style="width: 100%;height: 50px;">
+                        Registrati
+                    </button>
+                </div>
+
+            </form>
+        </div>
+
+
+
+
+    </div>
+</main>
+
+</body>
+
+</html>

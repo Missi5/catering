@@ -1,0 +1,258 @@
+/* =======================Variabili colori======================= */
+:root {
+    --primary: #b64154;
+    --secondary: #2B2D42;
+    --tertiary: #FFFFFF;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+/* =======================Immagini e sfondi======================= */
+.img-setup{
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.bg-color {
+    background-color: #3f3f47;
+}
+
+.bg-img {
+    top: 0;
+    left: 0;
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;
+    position: fixed;
+    z-index: -1;
+}
+
+.decorative-img {
+    z-index: -1;
+}
+
+.decorative-img-top {
+    width: 60vh;
+    overflow: hidden;
+}
+
+.parallax-img1, .parallax-img2, .parallax-img3, .parallax-img4, .parallax-img5 {
+    height: 100vh;
+    position: relative;
+    opacity: 0.9;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.parallax-img1 {
+    background-image: url('/images/sfondo.jpg');
+}
+.parallax-img2 {
+    background-image: url('/images/spaghetti.jpg');
+}
+
+.parallax-img3 {
+    background-image: url('/images/pizza.jpg');
+}
+
+.parallax-img4 {
+    background-image: url('/images/verdure.jpg');
+}
+
+.parallax-img5 {
+    background-image: url('/images/tavolo.jpg');
+}
+
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    background: linear-gradient(to right, #D2AC47, #F7EF8A, #D2AC47);
+    padding: 10px;
+    text-align: center;
+}
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+}
+
+/* =======================Colori======================= */
+.primary-color {
+    background: var(--primary) !important;
+}
+
+.secondary-color {
+    background: var(--secondary) !important;
+}
+
+.tertiary-color {
+    background: var(--tertiary) !important;
+}
+
+.gradient-custom-gold {
+    /* fallback for old browsers */
+    background: #F7EF8A;
+
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #D2AC47, #F7EF8A, #D2AC47);
+
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #D2AC47, #F7EF8A, #D2AC47);
+}
+
+/* =======================Testi======================= */
+.siw-title {
+    font-size: 13vh;
+    font-family: 'Niconne', cursive;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+}
+.menu_img {
+    margin-left: -98px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.niconne {
+    font-family: 'Niconne', cursive;
+}
+.main_title h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 48px;
+    color: #222222;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.story_inner .story_img2 {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.story_inner .story_img2:before {
+    content: "";
+    background: #f8f8f9;
+    position: absolute;
+    left: -104px;
+    top: 0px;
+    max-width: 590px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.main_btn {
+    padding: 0px 30px;
+    background: #f42f2c;
+    z-index: 2;
+    display: inline-block;
+    transition: all 400ms linear;
+    text-align: center;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    line-height: 48px;
+    border: 1px solid #f42f2c;
+    border-radius: 5px;
+    transition: all 300ms linear 0s;
+}
+.main_btn:hover {
+    background: transparent;
+    color: #f42f2c;
+    text-decoration: none;
+    outline: none;
+}
+.story_inner .story_img2 img {
+    position: relative;
+    left: -100px;
+    width: auto;
+}
+.story_inner .story_text {
+    max-width: 390px;
+}
+.story_inner .story_text h2 {
+    color: #222222;
+    font-size: 48px;
+    line-height: 54px;
+    margin-bottom: 30px;
+}
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+.gold {
+    background-image: linear-gradient(45deg, #D2AC47, #F7EF8A, #D2AC47);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+}
+
+.divider {
+    width: 100%;
+    height: 30px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.scroll-text {
+    position: relative;
+    animation-name: appear;
+    opacity: 0;
+    animation-delay: 1s;
+    animation-timing-function: ease-out;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes appear {
+    from {top: 200px;}
+    to {top: 0px; opacity:1;}
+}
+
+.text-divider {
+    font-size: 40px;
+    padding: 0 10px;
+    background-color: white;
+}
+
+
+/* =======================Bottoni e form======================= */
+.btn:focus {
+    border-color: #FF0000;
+    box-shadow: inset 0 1px 1px var(--primary), 0 0 8px var(--primary);
+}
+
+.input-group-text {
+    background: var(--primary) !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+    height: 100%;
+}
+
+.form-control:focus {
+    border-color: #FF0000;
+    box-shadow: inset 0 1px 1px var(--primary), 0 0 8px var(--primary);
+}
+
+.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus {
+    color: white !important;
+    background-color: var(--primary) !important;
+    border-color: gold !important;
+}

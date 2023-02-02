@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Catering di Alessandra Missimi</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link th:href="@{/css/responsive.css}" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+        <div class="container">
+            <nav class="navbar">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="" /><span>
+              CaterinGo
+            </span>
+                </a>
+                <div class="nav-elem-cont">
+                    <div class="navbarspace">
+                <ul class="nav-elem">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="service.html"> servizi </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Chi Siamo</a>
+                    </li>
+                </ul>
+
+
+                </div>
+
+                </div>
+                <div style="display: flex">
+
+                    <a class="nav-link btn btn-info" th:href="@{/register}" > Registrati</a>
+
+
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Login_modal" style="margin-left: 11px;">
+                        Login
+                    </button>
+                    <div class="modal fade" id="Login_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header" style="border-bottom: 0 !important">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form th:action="@{/login}" method="post">
+                                        <div class="form-group">
+                                            <label for="login_user">Username</label>
+                                            <input type="text" class="form-control" name="username" id="login_user" aria-describedby="emailHelp" placeholder="Enter Username">
+                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login_password">Password</label>
+                                            <input type="password" class="form-control" id="login_password" name="password" placeholder="Password">
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer" style="border-top: 0 !important">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section" style="position:relative;">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6 elem-sx">
+                                        <div class="slider_item-detail">
+                                            <div>
+                                                <h1>
+                                                    Da Intimo a Stravagante
+                                                </h1>
+                                                <p>
+                                                    Con una pianificazione dettagliata, un servizio personale senza pari, una cena squisita e un'attuazione precisa, stabiliamo lo standard per un'occasione indimenticabile. Ti invitiamo a creare, vivere e celebrare l'eccezionale.                                                </p>
+                                                <div style="display: flex !important">
+                                                    <a href="" class="text-uppercase custom_orange-btn mr-3">
+                                                        Shop Now
+                                                    </a>
+                                                    <a href="" class="text-uppercase custom_dark-btn">
+                                                        Contact Us
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 elem-dx">
+                                        <div class="slider_img-box">
+                                            <div>
+                                                <img src="images/index-img.png" alt="" class="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+    </section>
+
+    <!-- end slider section -->
+</div>
+
+<!-- service section -->
+
+<section class="service_section layout_padding ">
+    <div class="container">
+        <h2 class="custom_heading">I NOSTRI SERVIZZI</h2>
+        <p class="custom_heading-text">
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have
+        </p>
+        <div class=" layout_padding2">
+            <div class="card-deck">
+                <div class="card">
+                    <img class="card-img-top" src="images/card-item-1.png" alt="Card image cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">Orange</h5>
+                        <p class="card-text">
+                            There are many variations of passages of Lorem Ipsum
+                            available, but the majority have suffered alteration in some
+                            form, by injected humour, or randomised words which don't look
+                            even slightly believable.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="images/card-item-2.png" alt="Card image cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">Grapes</h5>
+                        <p class="card-text">
+                            There are many variations of passages of Lorem Ipsum
+                            available, but the majority have suffered alteration in some
+                            form, by injected humour, or randomised words which don't look
+                            even slightly believable.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="card-img-top" src="images/card-item-3.png" alt="Card image cap" />
+                    <div class="card-body">
+                        <h5 class="card-title">Gauva</h5>
+                        <p class="card-text">
+                            There are many variations of passages of Lorem Ipsum
+                            available, but the majority have suffered alteration in some
+                            form, by injected humour, or randomised words which don't look
+                            even slightly believable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <a href="" class="custom_dark-btn">
+                Read More
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="contact_section layout_padding">
+    <div class="container">
+        <h2 class="font-weight-bold">
+            Contact Us
+        </h2>
+        <div class="row">
+            <div class="col-md-8 mr-auto">
+                <form action="">
+                    <div class="contact_form-container">
+                        <div>
+                            <div>
+                                <input type="text" placeholder="Name">
+                            </div>
+                            <div>
+                                <input type="text" placeholder="Phone Number">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Email">
+                            </div>
+
+                            <div class="mt-5">
+                                <input type="text" placeholder="Message">
+                            </div>
+                            <div class="mt-5">
+                                <button type="submit">
+                                    send
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end contact section -->
+
+
+<section class="info_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>
+                    Fruits
+                </h5>
+                <ul>
+                    <li>
+                        randomised
+                    </li>
+                    <li>
+                        words which
+                    </li>
+                    <li>
+                        don't look even
+                    </li>
+                    <li>
+                        slightly
+                    </li>
+                    <li>
+                        believable. If you
+                    </li>
+                    <li>
+                        are going to use
+                    </li>
+                    <li>
+                        a passage of
+                    </li>
+                    <li>
+                        Lorem Ipsum,
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>
+                    Services
+                </h5>
+                <ul>
+                    <li>
+                        randomised
+                    </li>
+                    <li>
+                        words which
+                    </li>
+                    <li>
+                        don't look even
+                    </li>
+                    <li>
+                        slightly
+                    </li>
+                    <li>
+                        believable. If you
+                    </li>
+                    <li>
+                        are going to use
+                    </li>
+                    <li>
+                        a passage of
+                    </li>
+                    <li>
+                        Lorem Ipsum,
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>
+                    List
+                </h5>
+                <ul>
+                    <li>
+                        randomised
+                    </li>
+                    <li>
+                        words which
+                    </li>
+                    <li>
+                        don't look even
+                    </li>
+                    <li>
+                        slightly
+                    </li>
+                    <li>
+                        believable. If you
+                    </li>
+                    <li>
+                        are going to use
+                    </li>
+                    <li>
+                        a passage of
+                    </li>
+                    <li>
+                        Lorem Ipsum,
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <div class="social_container">
+                    <h5>
+                        Follow Us
+                    </h5>
+                    <div class="social-box">
+                        <a href="">
+                            <img src="images/fb.png" alt="">
+                        </a>
+
+                        <a href="">
+                            <img src="images/twitter.png" alt="">
+                        </a>
+                        <a href="">
+                            <img src="images/linkedin.png" alt="">
+                        </a>
+                        <a href="">
+                            <img src="images/instagram.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="subscribe_container">
+                    <h5>
+                        Subscribe Now
+                    </h5>
+                    <div class="form_container">
+                        <form action="">
+                            <input type="email">
+                            <button type="submit">
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- footer section -->
+<section class="container-fluid footer_section">
+    <p>
+        Copyright &copy; 2019 All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+    </p>
+</section>
+<!-- footer section -->
+
+
+</body>
+
+</html>
