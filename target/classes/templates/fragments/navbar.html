@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="    padding: 0.5rem 1rem;" th:fragment="navbar">
+  <a class="navbar-brand" href="#"><img src="/images/logo.png" alt="" /><span>
+              CaterinGo
+            </span></a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" sec:authorize="hasAuthority('ADMIN')" th:href="@{/admin/chef}">Chef </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Buffet <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Clienti</a>
+      </li>
+
+
+
+    </ul>
+
+  </div>
+  <div> <a th:href="@{'/logout'}">
+    <i class="fas fa-sign-out-alt"></i>
+  </a></div>
+</nav>
+</body>
+</html>
