@@ -28,11 +28,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/default">Home </a>
                 </li>
-                <li class="nav-item" >
-                    <a class="nav-link" th:href="@{/chef}"><span class="actives">Chef</span> </a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link"  th:href="@{/buffet}">Buffet </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" th:href="@{/chef}"><span class="actives">Chef</span> </a>
                 </li>
 
 
@@ -67,7 +67,7 @@
 
 
 
-            <div class="owl-stage-outer"><div class="owl-stage" style="padding: 20px 0px;display: flex;width: 3585px;">
+            <div class="owl-stage-outer"><div class="owl-stage" style="padding: 20px 0px;display: flex;width: 100%;">
                 <div class="owl-item" th:each="c : ${chef}" style="width: 273.75px; margin-right: 25px;">
                 <div class="item">
                 <div class="team-s n-d">
@@ -78,16 +78,16 @@
                         <span class="img-t2"></span>
                     </div>
                     <h3 th:text="${c.nome} + ' ' + ${c.cognome}">Anna Taylor</h3>
-                    <h5>Head Chief</h5>
+                    <h5>Head Chef</h5>
                     <div class="social-m">
                         <a class="main_btn" th:href="@{'/chef/' + ${c.id}}">Scopri di più</a>
                     </div>
                 </div>
             </div>
       </div></div> </div>
-</div>
+</div> </div> </div>
 
-        <footer class="secondary-color text-center text-white">
+<footer class="secondary-color text-center text-white">
             <div class="container p-4">
 
                 <section class="mb-4">
@@ -149,6 +149,8 @@
                 <span class="text-white">Missimi Alessandra</span>
             </div>
         </footer>
+
+        
 
         <div th:replace="fragments/base.html :: scriptFragment"></div>
 

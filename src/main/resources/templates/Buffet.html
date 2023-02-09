@@ -29,10 +29,10 @@
                     <a class="nav-link" href="/default">Home </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" th:href="@{/admin/chef}">Chef </a>
+                    <a class="nav-link"  th:href="@{/buffet}"><span class="actives">Buffet</span></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  th:href="@{/buffet}"><span class="actives">Buffet</span></span></a>
+                    <a class="nav-link" th:href="@{/chef}">Chef </a>
                 </li>
                 <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
                     <a class="nav-link" th:href="@{/admin/clienti}">Clienti</a>
@@ -180,8 +180,7 @@
     </div>
     <div class="row">
         <div class="col">
-            <div class="section_title_container text-center">
-                <div class="section_subtitle page_subtitle">Qualcosa di nuovo</div>
+            <div class="section_title_container text-center" style="margin-top:40px;">
                 <div class="section_title"><h1>Scopri i nostri Menu</h1></div>
             </div>
         </div>
