@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chef</title>
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/style2.css}">
+    <link th:href="@{/css/responsive.css}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/c5e4663022.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes&amp;display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body style="    font-size: 16px;    font-family: 'Oswald', serif;">
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="    padding: 0.5rem 1rem;">
+        <a class="navbar-brand" href="#"><img src="/images/logo.png" alt="" /><span>
+              CaterinGo
+            </span></a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="justify-content: center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/default">Home </a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" th:href="@{/chef}"><span class="actives">Chef</span> </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  th:href="@{/buffet}">Buffet </a>
+                </li>
+
+
+
+            </ul>
+
+        </div>
+        <div> <a th:href="@{'/logout'}">
+            <i class="fas fa-sign-out-alt"></i>
+        </a></div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 60px">
+            <div class="heading-top" style="    text-align: center;">
+                <h1 style="font-family: playfair display,serif;">Our Experience Chefs</h1>
+                <p>
+                    I nostri chef mette in risalto l'eccezionale talento e la vasta esperienza della nostra squadra culinaria. Ognuno di loro porta con sé anni di formazione e pratica nella preparazione di piatti deliziosi e artigianali.
+                    Il loro impegno per la qualità e l'utilizzo di ingredienti freschi e locali garantiscono un'esperienza culinaria unica ad ogni evento che serviamo.
+                </p>
+                <span class="span-one">
+<img src="images/h-tag.png" alt="">
+</span>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-30 no-ser-m">
+        <div  class="owl">
+
+
+
+
+            <div class="owl-stage-outer"><div class="owl-stage" style="padding: 20px 0px;display: flex;width: 3585px;">
+                <div class="owl-item" th:each="c : ${chef}" style="width: 273.75px; margin-right: 25px;">
+                <div class="item">
+                <div class="team-s n-d">
+                    <div class="min-t">
+<span class="img-t">
+<img th:src="@{'/images/chef.png'}" class="img-fluid" alt="">
+</span>
+                        <span class="img-t2"></span>
+                    </div>
+                    <h3 th:text="${c.nome} + ' ' + ${c.cognome}">Anna Taylor</h3>
+                    <h5>Head Chief</h5>
+                    <div class="social-m">
+                        <a class="main_btn" th:href="@{'/chef/' + ${c.id}}">Scopri di più</a>
+                    </div>
+                </div>
+            </div>
+      </div></div> </div>
+</div>
+
+        <footer class="secondary-color text-center text-white">
+            <div class="container p-4">
+
+                <section class="mb-4">
+
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+                    ><i class="fab fa-facebook-f"></i
+                    ></a>
+
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+                    ><i class="fab fa-twitter"></i
+                    ></a>
+
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+                    ><i class="fab fa-google"></i
+                    ></a>
+
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+                    ><i class="fab fa-instagram"></i
+                    ></a>
+
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+                    ><i class="fab fa-linkedin-in"></i
+                    ></a>
+
+                    <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+                    ><i class="fab fa-github"></i
+                    ></a>
+                </section>
+
+                <section>
+                    <form>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                                <p class="pt-2">
+                                    <strong>Iscriviti alla newsletter!</strong>
+                                </p>
+                            </div>
+
+                            <div class="col-md-5 col-12">
+                                <!-- Email input -->
+                                <div class="form-outline form-white mb-4">
+                                    <input type="email" id="form5Example21" class="form-control" />
+                                    <label class="form-label" for="form5Example21">Email</label>
+                                </div>
+                            </div>
+
+                            <div class="col-auto">
+                                <button type="submit" class="btn btn-outline-light mb-4">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </section>
+            </div>
+
+            <div class="text-center p-3 bg-dark" >
+                2022 Copyright:
+                <span class="text-white">Missimi Alessandra</span>
+            </div>
+        </footer>
+
+        <div th:replace="fragments/base.html :: scriptFragment"></div>
+
+</body>
+</html>

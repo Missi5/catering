@@ -1,5 +1,6 @@
 package it.uniroma3.siw.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -30,4 +31,8 @@ public class UserService {
 		return this.userRepository.save(user);
 	}
 
+	@Transactional
+	public List<Utente> getClienti() {
+		return userRepository.findClienti();
+	}
 }

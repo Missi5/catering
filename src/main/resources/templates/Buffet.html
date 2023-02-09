@@ -28,11 +28,14 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/default">Home </a>
                 </li>
-                <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+                <li class="nav-item">
                     <a class="nav-link" th:href="@{/admin/chef}">Chef </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link"  th:href="@{/buffet}">Buffet <span class="sr-only">(current)</span></a>
+                    <a class="nav-link"  th:href="@{/buffet}"><span class="actives">Buffet</span></span></a>
+                </li>
+                <li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+                    <a class="nav-link" th:href="@{/admin/clienti}">Clienti</a>
                 </li>
 
 
@@ -163,7 +166,7 @@
                         <h5>Ingredienti:</h5>
                         <div style="overflow-y: auto;margin-bottom: 1rem;height: 125px;">
                             <div class="form-check" th:each="i : ${ingredienti}">
-                                <input type="checkbox" class="form-check-input" th:field="${newpiatto.ingredienti}" th:value="${i.id}" th:id="${i.id}" required>
+                                <input type="checkbox" class="form-check-input" th:field="${newpiatto.ingredienti}" th:value="${i.id}" th:id="${i.id}">
                                 <label class="form-check-label" th:for="${i.id}" th:text="${i.nome}">Check me out</label>
                             </div>
                         </div>
@@ -187,7 +190,7 @@
 
         <div class="col-lg-4 themenu_column" th:each="b : ${buffet}">
             <div class="themenu_col trans_400">
-                <div class="themenu_edit" style="    display: flex;justify-content: end;"> <a th:href="@{'/admin/editbuffet/' + ${b.id}}"> <i class="fas fa-edit"></i></a></div>
+                <div sec:authorize="hasAuthority('ADMIN')" class="themenu_edit" style="    display: flex;justify-content: end;"> <a th:href="@{'/admin/editbuffet/' + ${b.id}}"> <i class="fas fa-edit"></i></a></div>
                 <div class="themenu_col_title" th:text="${b.nome}"></div>
                 <div class="themenu_desc"> <p th:text="${b.descrizione}"></p></div>
                 <div class="dish_list">
@@ -212,6 +215,70 @@
 
     </div>
 </div>
+<footer class="secondary-color text-center text-white">
+    <div class="container p-4">
+
+        <section class="mb-4">
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+            ><i class="fab fa-facebook-f"></i
+            ></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+            ><i class="fab fa-twitter"></i
+            ></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+            ><i class="fab fa-google"></i
+            ></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+            ><i class="fab fa-instagram"></i
+            ></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+            ><i class="fab fa-linkedin-in"></i
+            ></a>
+
+            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
+            ><i class="fab fa-github"></i
+            ></a>
+        </section>
+
+        <section>
+            <form>
+                <div class="row d-flex justify-content-center">
+                    <div class="col-auto">
+                        <p class="pt-2">
+                            <strong>Iscriviti alla newsletter!</strong>
+                        </p>
+                    </div>
+
+                    <div class="col-md-5 col-12">
+                        <!-- Email input -->
+                        <div class="form-outline form-white mb-4">
+                            <input type="email" id="form5Example21" class="form-control" />
+                            <label class="form-label" for="form5Example21">Email</label>
+                        </div>
+                    </div>
+
+                    <div class="col-auto">
+                        <button type="submit" class="btn btn-outline-light mb-4">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <div class="text-center p-3 bg-dark" >
+        2022 Copyright:
+        <span class="text-white">Missimi Alessandra</span>
+    </div>
+</footer>
+
+<div th:replace="fragments/base.html :: scriptFragment"></div>
 
 </body>
 </html>

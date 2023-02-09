@@ -34,12 +34,7 @@ public class ChefService {
 	public void save(Chef b) {
 		this.chefRepository.save(b);
 	}
-	
-	@Transactional
-	public void delete(Chef b) {
-		this.chefRepository.delete(b);
-	}
-	
+
 	@Transactional
 	public void deleteById(Long id) {
 		this.chefRepository.deleteById(id);

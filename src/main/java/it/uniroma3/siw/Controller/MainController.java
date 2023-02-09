@@ -1,10 +1,7 @@
 package it.uniroma3.siw.Controller;
 
 import it.uniroma3.siw.Model.*;
-import it.uniroma3.siw.Service.BuffetService;
-import it.uniroma3.siw.Service.ChefService;
-import it.uniroma3.siw.Service.IngredienteService;
-import it.uniroma3.siw.Service.PiattoService;
+import it.uniroma3.siw.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +28,9 @@ public class MainController {
     @Autowired
     private IngredienteService ingredienteService;
 
+    @Autowired
+    private UserService userService;
+
     @GetMapping("/buffet")
     public String getBuffet(Model model) {
         model.addAttribute("buffet", buffetService.findAll());
@@ -41,6 +41,21 @@ public class MainController {
         model.addAttribute("newpiatto", new Piatto());
         model.addAttribute("newingrediente", new Ingrediente());
         return "buffet";
+    }
+
+    @GetMapping("/chef")
+    public String getchef(Model model) {
+        model.addAttribute("chef", chefService.findAll());
+        return "Chef";
+    }
+
+    @GetMapping("/chef/{id}")
+    public String specificchef(@PathVariable("id") Long id, Model model) {
+        Chef c = chefService.findById(id);
+        model.addAttribute("chef", c);
+        model.addAttribute("buffet",c.getBuffets());
+
+        return "/chefID";
     }
 
     @GetMapping("/admin/editbuffet/{id}")
@@ -75,6 +90,12 @@ public class MainController {
         model.addAttribute("newchef", new Chef());
         return "admin/Chef";
     }
+    @GetMapping("/admin/clienti")
+    public String getclientiadmin(Model model) {
+        model.addAttribute("clienti", userService.getClienti());
+        return "admin/Clienti";
+    }
+
     @GetMapping("/start")
     public String Startup(Model model) {
         /*Chef c1 = new Chef("Filippo","Gustav","Tedesca");
@@ -110,6 +131,9 @@ public class MainController {
     @PostMapping(value= "/newbuffet")
     public String newbuffet( @ModelAttribute("buffet") Buffet buffet,Model model) {
         this.buffetService.save(buffet);
+        Chef c = this.chefService.findById(buffet.getChef().getId());
+        c.getBuffets().add(buffet);
+        this.chefService.save(c);
         return "redirect:/buffet";
 
     }
@@ -135,13 +159,30 @@ public class MainController {
     }
 
     @PostMapping(value = "/admin/editChef")
-    public String editCliente(@RequestParam Long ChefId, @ModelAttribute("chef") Chef chef, Model model, BindingResult userBindingResult) {
+    public String editChef(@RequestParam Long ChefId, @ModelAttribute("chef") Chef chef, Model model, BindingResult userBindingResult) {
         Chef c = this.chefService.findById(ChefId);
         c.setNome(chef.getNome());
         c.setCognome(chef.getCognome());
         c.setNazionalita(chef.getNazionalita());
         this.chefService.save(c);
         return "redirect:/admin/chef";
+    }
+    @PostMapping(value = "/admin/editClienti")
+    public String editCliente(@RequestParam Long ClienteId, @ModelAttribute("clienti") Utente clienti, Model model, BindingResult userBindingResult) {
+        Utente c = this.userService.getUser(ClienteId);
+        c.setNome(clienti.getNome());
+        c.setCognome(clienti.getCognome());
+        this.userService.saveUser(c);
+        return "redirect:/admin/clienti";
+    }
+
+    @GetMapping("/admin/deletechef/{chefId}")
+    public String deleteChef(@PathVariable("chefId") Long chefId) {
+
+        chefService.deleteById(chefId);
+
+        return "redirect:/admin/chef";
+
     }
 
 }

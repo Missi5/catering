@@ -15,6 +15,151 @@ margin:0;
 .form-label{
   color: white;
 }
+.team-s {
+  position: relative;
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0px 5px 19.53px 1.47px rgb(85 80 98 / 19%);
+  padding-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  padding-top: 60px;
+}
+.team-s:before {
+  content: "";
+  position: absolute;
+  background-color: #ffbe00;
+  width: 100%;
+  height: 41%;
+  left: 0;
+  top: 0;
+}
+.min-t {
+  position: relative;
+}
+.img-t {
+  background: #454440;
+  display: inline-block;
+  width: 159px;
+  height: 159px;
+  overflow: hidden;
+  z-index: 9;
+  position: relative;
+  border-radius: 50%;
+}
+.heading-top .span-one {
+  position: relative;
+}
+.heading-top h1 {
+  color: #131313;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 52px;
+  margin-bottom: 15px;
+}
+.about_me {
+  text-align: center;
+  margin-top: 40px;
+}
+.actives{
+  font-weight: bold;
+  color: black;
+}
+.about_me_content {
+  padding-top: 60px;
+}
+.about_me_content h5 {
+  font-weight: 400;
+  margin-bottom: 10px;
+  display: block;
+  text-transform: capitalize;
+  font-size: 15px;
+  opacity: .55;
+}
+.about_me_content h3 {
+  font-size: 56px;
+  font-style: normal;
+  text-transform: capitalize;
+  margin-bottom: 25px;
+}
+about_me_content h3 span {
+  font-weight: 700;
+}
+.about_me_content p {
+  padding-right: 100px;
+}
+.section-title {
+  margin-bottom: 30px;
+}
+.section-title h4::after {
+  content: "";
+  background: radial-gradient(ellipse at left,#ddd 0%,rgba(255,255,255,0) 70%);
+  width: 200px;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+}
+.about_me img {
+  width: 350px;
+  height: 350px;
+  border-radius: 500px;
+  -webkit-box-shadow: 0 10px 40px -10px rgb(0 64 128 / 20%);
+  box-shadow: 0 10px 40px -10px rgb(0 64 128 / 20%);
+  border: 14px solid #fff;
+  position: relative;
+}
+.single_about span {
+  float: left;
+  background: #f0f3fa;
+  color: #232a34;
+  font-size: 22px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 10px;
+}
+.single_about h4 {
+  overflow: hidden;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.heading-top .span-one:before {
+  content: "";
+  position: absolute;
+  background-image: url(../images/left-s.png);
+  height: 4px;
+  width: 320px;
+  left: -13.5em;
+  top: 1.7em;
+  bottom: 0;
+  margin: auto;
+  background-repeat: no-repeat;
+}
+.heading-top .span-one:after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/right-s.png);
+  height: 4px;
+  width: 320px;
+  left: 2.8em;
+  top: 1.7em;
+  bottom: 0;
+  margin: auto;
+  background-repeat: no-repeat;
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-style: none;
+}
+
+
 .bg-img{
   top: 0;
   left: 0;
@@ -639,6 +784,11 @@ display: flex;
   padding-bottom: 44px;
   border: solid 1px #dadada;
 }
+.themenu_row {
+  margin-top: 71px;
+  padding-bottom: 102px;
+  row-gap: 38px;
+}
 .dish_list {
   margin-top: 20px;
 }
@@ -656,6 +806,14 @@ display: flex;
 }
 .dish_contents {
   margin-top: 3px;
+}
+.dish_contents ul li:not(:last-child)::after {
+  display: inline-block;
+  content: '/';
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 14px;
+  color: #636363;
 }
 ul {
   list-style: none;

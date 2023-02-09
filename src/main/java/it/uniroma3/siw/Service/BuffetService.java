@@ -36,11 +36,7 @@ public class BuffetService {
 	public void save(Buffet b) {
 		this.buffetRepository.save(b);
 	}
-	
-	@Transactional
-	public void delete(Buffet b) {
-		this.buffetRepository.delete(b);
-	}
+
 	
 	@Transactional
 	public void deleteById(Long id) {
