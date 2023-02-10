@@ -31,7 +31,7 @@
                         <input type="text" th:field="${credentials.username}"
                                class="form-control"
                                th:classappend="${#fields.hasErrors('credentials.username') ? 'is-invalid' : ''}"
-                               id="input-username" />
+                               id="input-username" required />
                         <div class="invalid-feedback">
 							<span th:if="${#fields.hasErrors('credentials.username')}"
                                   th:errors="${credentials.username}"></span>
@@ -45,7 +45,7 @@
                         <input type="password" th:field="${credentials.password}"
                                class="form-control"
                                th:classappend="${#fields.hasErrors('credentials.password') ? 'is-invalid' : ''}"
-                               id="input-password" />
+                               id="input-password" required/>
                         <div class="invalid-feedback">
 							<span th:if="${#fields.hasErrors('credentials.password')}"
                                   th:errors="${credentials.password}"></span>
@@ -58,7 +58,7 @@
                     <div class="input-group mb-3">
                         <input type="text" th:field="${user.nome}" class="form-control"
                                th:classappend="${#fields.hasErrors('user.nome') ? 'is-invalid' : ''}"
-                               id="input-nome" />
+                               id="input-nome" required/>
                         <div class="invalid-feedback">
 							<span th:if="${#fields.hasErrors('user.nome')}"
                                   th:errors="${user.nome}"></span>
@@ -71,7 +71,7 @@
                     <div class="input-group mb-3">
                         <input type="text" th:field="${user.cognome}" class="form-control"
                                th:classappend="${#fields.hasErrors('user.cognome') ? 'is-invalid' : ''}"
-                               id="input-cognome" />
+                               id="input-cognome"required />
                         <div class="invalid-feedback">
 							<span th:if="${#fields.hasErrors('user.cognome')}"
                                   th:errors="${user.cognome}"></span>
@@ -97,58 +97,6 @@
 <footer class="secondary-color text-center text-white">
     <div class="container p-4">
 
-        <section class="mb-4">
-
-            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
-            ><i class="fab fa-facebook-f"></i
-            ></a>
-
-            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
-            ><i class="fab fa-twitter"></i
-            ></a>
-
-            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
-            ><i class="fab fa-google"></i
-            ></a>
-
-            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
-            ><i class="fab fa-instagram"></i
-            ></a>
-
-            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
-            ><i class="fab fa-linkedin-in"></i
-            ></a>
-
-            <a class="btn btn-outline-light btn-floating m-1" href="#" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-        </section>
-
-        <section>
-            <form>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-auto">
-                        <p class="pt-2">
-                            <strong>Iscriviti alla newsletter!</strong>
-                        </p>
-                    </div>
-
-                    <div class="col-md-5 col-12">
-                        <!-- Email input -->
-                        <div class="form-outline form-white mb-4">
-                            <input type="email" id="form5Example21" class="form-control" />
-                            <label class="form-label" for="form5Example21">Email</label>
-                        </div>
-                    </div>
-
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-outline-light mb-4">
-                            Subscribe
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </section>
     </div>
 
     <div class="text-center p-3 bg-dark" >

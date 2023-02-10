@@ -34,7 +34,9 @@
                 <li class="nav-item" >
                     <a class="nav-link" th:href="@{/chef}"><span class="actives">Chef</span> </a>
                 </li>
-
+				<li class="nav-item" sec:authorize="hasAuthority('ADMIN')">
+                    <a class="nav-link" th:href="@{/admin/clienti}">Clienti</a>
+                </li>
 
 
             </ul>
@@ -50,7 +52,7 @@
     <div class="row">
         <div class="col-md-12" style="margin-top: 60px">
             <div class="heading-top" style="    text-align: center;">
-                <h1 style="font-family: playfair display,serif;">Our Experience Chefs</h1>
+                <h1 style="font-family: playfair display,serif;">I nostri chef</h1>
                 <p>
                     I nostri chef mette in risalto l'eccezionale talento e la vasta esperienza della nostra squadra culinaria. Ognuno di loro porta con sé anni di formazione e pratica nella preparazione di piatti deliziosi e artigianali.
                     Il loro impegno per la qualità e l'utilizzo di ingredienti freschi e locali garantiscono un'esperienza culinaria unica ad ogni evento che serviamo.
